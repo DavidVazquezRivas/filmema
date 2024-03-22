@@ -2,20 +2,15 @@ import { useEffect, useState } from 'react'
 import getMovie from '../../services/getMovie'
 import './MovieCard.css'
 
-export default function MovieCard({ title }) {
-  const [movie, setMovie] = useState({})
-
-  useEffect(() => {
-    getMovie(title).then(res => setMovie(res))
-  }, [movie])
+export default function MovieCard({ Title, Released, Genre, Poster}) {
 
   return (
     <a className='movie-card' href='#'>
-      <img src={movie.Poster} />
+      <img src={Poster} />
       <section className='movie-card-data'>
-        <p>{movie.Released}</p>
-        <h3>{movie.Title}</h3>
-        <span>{movie.Genre}</span>
+        <p>{Released}</p>
+        <h3>{Title}</h3>
+        <span>{Genre}</span>
       </section>
     </a>
   )
