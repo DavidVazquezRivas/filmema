@@ -4,12 +4,13 @@ import './MovieCardList.css'
 
 export default function MovieCardList({ movies }) {
   const movieCards = movies.map((movie) => {
+    if (movie.Poster === 'N/A') return;
     return(
       <MovieCard 
-        Title={movie.Title}
-        Released={movie.Released}
-        Genre={movie.Genre}
+        id={movie.imdbID}
         Poster={movie.Poster}
+        Title={movie.Title}
+        Year={movie.Year}
       />
     )
   })

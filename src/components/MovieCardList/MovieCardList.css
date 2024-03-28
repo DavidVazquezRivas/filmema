@@ -1,8 +1,18 @@
+:root{
+  --min-moviecard-w: 220px;
+}
+
 .MovieCardList {
   display: grid;
   grid-template-columns: repeat(
     auto-fit,
-    minmax(220px, 1fr)
+    minmax(var(--min-moviecard-w), 1fr)
   );
   grid-gap: 20px;
+}
+
+@media (width > 1800px) {
+  :root {
+    --min-moviecard-w: 300px; 
+  }
 }
