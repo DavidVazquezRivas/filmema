@@ -9,7 +9,7 @@ export default function MovieCardList({ keyword }) {
   useEffect(() => {
     async function fetchMovies() {
       try {
-        const arr = await searchMovies(keyword);
+        const arr = await searchMovies(keyword, 1);
         setMovies(arr);
       } catch (error) {
         console.error('Error fetching movies:', error);
@@ -19,13 +19,15 @@ export default function MovieCardList({ keyword }) {
   }, []);
 
   const movieCards = movies.map((movie) => {
-    if (movie.Poster === 'N/A') return;
+    if (movie.poster_path === null) return
     return(
       <MovieCard 
-        id={movie.imdbID}
-        Poster={movie.Poster}
-        Title={movie.Title}
-        Year={movie.Year}
+        genreIds={movie.genre_ids}
+        key={movie.id}
+        id={movie.id}
+        posterPath={movie.poster_path}
+        release={movie.release_date}
+        title={movie.title}
       />
     )
   })

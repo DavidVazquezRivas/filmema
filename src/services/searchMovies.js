@@ -1,30 +1,34 @@
-import { APIkey } from "../constants"
+import { API_URL, API_KEY } from "../APIconst"
 
-export default async function searchMovies(search) {
-  try {
-    const result = [];
-    let page = 1;
+export default async function searchMovies(keyword, page) {
 
-    const fetchMovies = async () => {
-      const response = await fetch(`http://www.omdbapi.com/?apikey=${APIkey}&s=${search}&page=${page}&type=movie`);
-      const data = await response.json();
-      return data;
+  const fetchMovies = async (page) => {
+    const options = {
+      method: 'GET',
+      headers: {
+        accept: 'application/json',
+        Authorization: `Bearer ${API_KEY}`
+      }
     };
-
-    let data = await fetchMovies();
-
-    while (data.Response === 'True') {
-      data.Search.forEach(({ imdbID, Poster, Title, Year }) => {
-        result.push({ imdbID, Poster, Title, Year });
-      });
-      
-      page++;
-      data = await fetchMovies();
-    }
-
-    return result;
-  } catch (error) {
-    console.error('Error in API key', error);
-    return [];
+    
+    const response = await fetch(`${API_URL}/search/movie?include_adult=true&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc&query=${keyword}`, options);
+    const responseJson = await response.json();
+    console.log(responseJson)
+    return responseJson.results;
   }
+
+  const searchResult = []
+
+  let APIpage = (page - 1) * 5 + 1
+
+  let result
+  for (let i = APIpage; i < APIpage + 5; i++) {
+    result = await fetchMovies(i)
+    result.forEach(({genre_ids, id, poster_path,release_date, title}) => {
+      searchResult.push({genre_ids, id, poster_path,release_date, title})
+    });
+  }
+
+  console.log(searchResult)
+  return searchResult
 }

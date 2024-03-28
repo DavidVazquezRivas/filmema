@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className="app">
-      <MovieCardList keyword={'spiderman'}></MovieCardList>
+      <MovieCardList keyword={'marvel'}></MovieCardList>
     </ div>
   )
 }
