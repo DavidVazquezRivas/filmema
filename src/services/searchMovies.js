@@ -14,9 +14,8 @@ export default async function searchMovies(keyword, page) {
     };
     
     const response = await fetch(`${API_URL}/search/movie?include_adult=true&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc&query=${keyword}`, options);
-    const responseJson = await response.json();
-    console.log(responseJson)
-    return responseJson.results;
+    const { results } = await response.json();
+    return results
   }
 
   const searchResult = []
@@ -32,5 +31,5 @@ export default async function searchMovies(keyword, page) {
   }
 
   console.log(searchResult)
-  return searchResult
+  return searchResult.filter(movie => movie.poster_path !== null)
 }

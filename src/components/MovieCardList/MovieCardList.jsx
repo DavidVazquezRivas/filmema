@@ -15,7 +15,6 @@ export default function MovieCardList({ params }) {
   }, []);
 
   const movieCards = movies.map((movie) => {
-    if (movie.poster_path === null) return
     return(
       <MovieCard 
         genreIds={movie.genre_ids}
