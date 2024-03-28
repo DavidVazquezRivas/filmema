@@ -6,23 +6,9 @@ import searchMovies from './services/searchMovies'
 
 function App() {
 
-  const [movies, setMovies] = useState([]);
-
-  useEffect(() => {
-    async function fetchMovies() {
-      try {
-        const arr = await searchMovies('spiderman');
-        setMovies(arr);
-      } catch (error) {
-        console.error('Error fetching movies:', error);
-      }
-    }
-    fetchMovies();
-  }, []);
-
   return (
     <div className="app">
-      <MovieCardList movies={movies}></MovieCardList>
+      <MovieCardList keyword={'spiderman'}></MovieCardList>
     </ div>
   )
 }
