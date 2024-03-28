@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Route } from 'wouter'
 import './App.css'
 import MovieCard from './components/MovieCard/MovieCard'
 import MovieCardList from './components/MovieCardList/MovieCardList'
@@ -8,7 +9,10 @@ function App() {
 
   return (
     <div className="app">
-      <MovieCardList keyword={'marvel'}></MovieCardList>
+      <Route 
+        component={MovieCardList}
+        path='/search/:keyword'
+      />
     </ div>
   )
 }

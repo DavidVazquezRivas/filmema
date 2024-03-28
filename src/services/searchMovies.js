@@ -2,6 +2,8 @@ import { API_URL, API_KEY } from "../APIconst"
 
 export default async function searchMovies(keyword, page) {
 
+  const pageSize = 5;
+
   const fetchMovies = async (page) => {
     const options = {
       method: 'GET',
@@ -19,10 +21,10 @@ export default async function searchMovies(keyword, page) {
 
   const searchResult = []
 
-  let APIpage = (page - 1) * 5 + 1
+  let APIpage = (page - 1) * pageSize + 1
 
   let result
-  for (let i = APIpage; i < APIpage + 5; i++) {
+  for (let i = APIpage; i < APIpage + pageSize; i++) {
     result = await fetchMovies(i)
     result.forEach(({genre_ids, id, poster_path,release_date, title}) => {
       searchResult.push({genre_ids, id, poster_path,release_date, title})

@@ -3,7 +3,8 @@ import MovieCard from '../MovieCard/MovieCard'
 import './MovieCardList.css'
 import searchMovies from '../../services/searchMovies';
 
-export default function MovieCardList({ keyword }) {
+export default function MovieCardList({ params }) {
+  const { keyword } = params
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
