@@ -8,15 +8,10 @@ export default function MovieCardList({ params }) {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    async function fetchMovies() {
-      try {
-        const arr = await searchMovies(keyword, 1);
-        setMovies(arr);
-      } catch (error) {
-        console.error('Error fetching movies:', error);
-      }
-    }
-    fetchMovies();
+      searchMovies(keyword, 1)
+        .then((movies) => {
+          setMovies(movies)
+        })
   }, []);
 
   const movieCards = movies.map((movie) => {
