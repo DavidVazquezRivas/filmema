@@ -8,7 +8,7 @@ export default function Header() {
 				<Link to='/' className='header-logo'>
 					<img src='../../../logo.svg' />
 				</Link>
-				<Link to='/discover/movies'className='header-button'>DISCOVER</Link>
+				<Link to='/discover'className='header-button'>DISCOVER</Link>
 			</div>
 			<div className="type-select">
 				<button className='header-button'>MOVIES</button>
