@@ -18,15 +18,6 @@
 	padding: 10px;
 }
 
-.header-left {
-	grid-column: 1;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	max-width: 250px;
-	align-items: center;
-}
-
 .header-logo {
 	width: fit-content;
 	display: flex;

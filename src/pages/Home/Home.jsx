@@ -1,3 +1,5 @@
+import Discover from '../Discover/Discover'
+
 export default function Home() {
-	return <></>
+	return <Discover></Discover>
 }

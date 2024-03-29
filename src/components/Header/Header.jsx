@@ -18,12 +18,9 @@ export default function Header() {
 
 	return (
 		<header className='app-header'>
-			<div className='header-left'>
-				<Link to='/' className='header-logo'>
-					<img src='../../../logo.svg' />
-				</Link>
-				<Link to='/discover'className='header-button'>DISCOVER</Link>
-			</div>
+			<Link to='/' className='header-logo'>
+				<img src='../../../logo.svg' />
+			</Link>
 			<div className="type-select">
 				<button className='header-button'>MOVIES</button>
 				<button className='header-button'>SERIES</button>
