@@ -61,7 +61,7 @@ function processData(data, dataSet, result, type) {
 			title: data[map.title],
 		}
 
-		processedData.release_date = processedData.release_date.split('-')[0]
+		processedData.release_date = processedData.release_date ? processedData.release_date.split('-')[0] : 'undefined'
 
 		result.push(processedData)
 	}
