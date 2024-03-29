@@ -3,6 +3,6 @@
 }
 
 main {
-  margin-top: calc(var(--header-h) + 20);
+  margin-top: 70px;
   padding: 10px;
 }

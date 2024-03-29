@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import MovieCardList from "../../components/MovieCardList/MovieCardList";
 import Spinner from "../../components/Spinner/Spinner";
-import searchMovies from '../../services/searchMovies'
+import getMovies from '../../services/getMovies'
 
 export default function SearchResults({ params }) {
 
@@ -11,7 +11,7 @@ export default function SearchResults({ params }) {
 
   useEffect(() => {
       setLoading(true)
-      searchMovies(keyword, 1)
+      getMovies({keyword: keyword, page: 1, search: false})
         .then((movies) => {
           setMovies(movies)
           setLoading(false)
