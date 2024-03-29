@@ -1,19 +1,19 @@
 import { useState, useEffect } from 'react'
 import MovieCardList from '../../components/MovieCardList/MovieCardList'
 import Spinner from '../../components/Spinner/Spinner'
-import getMovies from '../../services/getMovies'
+import getFilms from '../../services/getFilms'
 
 export default function Discover({ params }) {
-	const [movies, setMovies] = useState([])
+	const [films, setFilms] = useState([])
 	const [loading, setLoading] = useState(false)
 
 	useEffect(() => {
 		setLoading(true)
-		getMovies({ page: 1, search: false }).then((movies) => {
-			setMovies(movies)
+		getFilms({ page: 1, search: false, type: 'tv' }).then((movies) => {
+			setFilms(movies)
 			setLoading(false)
 		})
 	}, [])
 
-	return <>{loading ? <Spinner /> : <MovieCardList movies={movies} />}</>
+	return <>{loading ? <Spinner /> : <MovieCardList movies={films} />}</>
 }
