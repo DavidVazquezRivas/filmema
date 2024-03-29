@@ -1,8 +1,8 @@
 .app {
-  min-height: 100vh;
+	min-height: 100vh;
 }
 
 main {
-  margin-top: 70px;
-  padding: 10px;
+	margin-top: 70px;
+	padding: 10px;
 }

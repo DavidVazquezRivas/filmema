@@ -1,80 +1,82 @@
 :root {
-  --header-h: 50px;
+	--header-h: 50px;
 }
 
 header {
-  position: fixed;
-  z-index: 9999;
-  top: 0;
-  width: 100vw;
-  height: var(--header-h);
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	width: 100vw;
+	height: var(--header-h);
 
-  background-color: #2d2d2dd2;
+	background-color: #2d2d2dd2;
 
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding: 10px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	padding: 10px;
 }
 
 .header-logo {
-  grid-column: 1;
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+	grid-column: 1;
+	width: fit-content;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .type-select {
-  grid-column: 2;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+	grid-column: 2;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 
-  background: transparent;
-  gap: 25px;
+	background: transparent;
+	gap: 25px;
 }
 
 .type-select button {
-  background: transparent;
-  border: 0;
-  font-size: 1.3rem;
+	background: transparent;
+	border: 0;
+	font-size: 1.3rem;
 
-  cursor: pointer;
-  transition: text-shadow 0.3s;
+	cursor: pointer;
+	transition: text-shadow 0.3s;
 }
 
 .type-select button:hover {
-  text-shadow: 0 0 5px rgba(255, 255, 255, 1), 0 0 10px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.2), 0 0 40px rgba(255, 255, 255, 0.1); 
+	text-shadow: 0 0 5px rgba(255, 255, 255, 1), 0 0 10px rgba(255, 255, 255, 0.8),
+		0 0 15px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.4),
+		0 0 30px rgba(255, 255, 255, 0.2), 0 0 40px rgba(255, 255, 255, 0.1);
 }
 
 .searcher {
-  width: fit-content;
-  border-radius: 10px;
-  justify-self: right;
-  margin-right: 50px;
+	width: fit-content;
+	border-radius: 10px;
+	justify-self: right;
+	margin-right: 50px;
 
-  grid-column: 3;
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
-  overflow: hidden;
+	grid-column: 3;
+	display: flex;
+	flex-direction: row;
+	justify-content: right;
+	overflow: hidden;
 }
 
 .searcher input {
-  background-color: #fff;
-  opacity: 1;
-  border: 0;
-  padding: 0 10px;
-  font-size: 1.5rem;
+	background-color: #fff;
+	opacity: 1;
+	border: 0;
+	padding: 0 10px;
+	font-size: 1.5rem;
 }
 
 .searcher button {
-  background-color: #fff;
-  opacity: 1;
-  width: 40px;
-  color: black;
-  border: 0;
+	background-color: #fff;
+	opacity: 1;
+	width: 40px;
+	color: black;
+	border: 0;
 
-  cursor: pointer;
+	cursor: pointer;
 }

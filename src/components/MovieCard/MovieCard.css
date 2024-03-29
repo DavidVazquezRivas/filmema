@@ -1,54 +1,54 @@
 .movie-card {
-  position: relative;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  border-radius: 10px;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
+	position: relative;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	border-radius: 10px;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
 }
 
 .movie-card img {
-  grid-column: 1;
-  grid-row: 1;
-  height: 100%;
-  width: 100%;
+	grid-column: 1;
+	grid-row: 1;
+	height: 100%;
+	width: 100%;
 }
 
 .movie-card-data {
-  grid-column: 1;
-  grid-row: 1;
+	grid-column: 1;
+	grid-row: 1;
 
-  color: white;
-  background: linear-gradient(to top, black, rgba(0, 0, 0, 0.4) 50%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+	color: white;
+	background: linear-gradient(to top, black, rgba(0, 0, 0, 0.4) 50%);
+	opacity: 0;
+	transition: opacity 0.3s ease;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 10px;
 }
 
-.movie-card:hover .movie-card-data{
-  opacity: 1;
+.movie-card:hover .movie-card-data {
+	opacity: 1;
 }
 
 .movie-card-data p {
-  padding: 1px 4px;
-  margin: 4px 0;
+	padding: 1px 4px;
+	margin: 4px 0;
 
-  white-space: nowrap;
-  background: #5a5a5aa5;
-  overflow: hidden;
-  width: fit-content;
-  height: fit-content;
-  border-radius: 10%;
-  text-shadow: 0 1px 2px #0000009e;
-  color: #d4d8de;
+	white-space: nowrap;
+	background: #5a5a5aa5;
+	overflow: hidden;
+	width: fit-content;
+	height: fit-content;
+	border-radius: 10%;
+	text-shadow: 0 1px 2px #0000009e;
+	color: #d4d8de;
 }
 
 .movie-card h3 {
-  padding: 4px 0;
+	padding: 4px 0;
 }
