@@ -1,8 +1,12 @@
 import './Header.css'
+import { Link } from 'wouter';
 
 export default function Header() {
   return (
     <header>
+      <Link to='/' className='header-logo'>
+        <img src='../../../logo.svg'/>
+      </Link>
       <div className="type-select">
         <button>MOVIES</button>
         <button>SERIES</button>
