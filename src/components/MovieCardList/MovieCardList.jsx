@@ -2,17 +2,21 @@ import { useEffect, useState } from 'react'
 import MovieCard from '../MovieCard/MovieCard'
 import './MovieCardList.css'
 import searchMovies from '../../services/searchMovies';
+import Spinner from '../Spinner/Spinner';
 
 export default function MovieCardList({ params }) {
   const { keyword } = params
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState([])
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
+      setLoading(true)
       searchMovies(keyword, 1)
         .then((movies) => {
           setMovies(movies)
+          setLoading(false)
         })
-  }, []);
+  }, [keyword]);
 
   const movieCards = movies.map((movie) => {
     return(
@@ -26,9 +30,18 @@ export default function MovieCardList({ params }) {
       />
     )
   })
+
   return (
-    <ul className='MovieCardList'>
+    <>
+    {
+      loading
+      ? <Spinner />
+      :
+      <ul className='MovieCardList'>
       {movieCards}
-    </ul>
+      </ul>
+    }
+    </>
+    
   )
 }
