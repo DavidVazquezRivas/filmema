@@ -1,27 +1,21 @@
-import { useEffect, useState } from 'react'
 import { Route } from 'wouter'
 import './App.css'
-import MovieCard from './components/MovieCard/MovieCard'
-import MovieCardList from './components/MovieCardList/MovieCardList'
-import searchMovies from './services/searchMovies'
+import Header from './components/Header/Header'
+import Home from './pages/Home/Home'
+import SearchResults from './pages/SearchResults/SearchResults'
 
 function App() {
 
   return (
     <div className="app">
-      <header>
-        <div className='type-select'>
-          <button>MOVIES</button>
-          <button>SERIES</button>
-        </div> 
-        <form className='searcher'>
-          <input type='text' placeholder='Type title to search'></input>
-          <button type='submit'><i class="fa fa-search"></i></button>
-        </form>
-      </header>
+      <Header />
       <main>
         <Route 
-          component={MovieCardList}
+          component={Home}
+          path='/'
+        />
+        <Route 
+          component={SearchResults}
           path='/search/:keyword'
         />
       </main>

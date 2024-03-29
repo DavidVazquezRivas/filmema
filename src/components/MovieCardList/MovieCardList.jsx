@@ -1,22 +1,8 @@
-import { useEffect, useState } from 'react'
 import MovieCard from '../MovieCard/MovieCard'
 import './MovieCardList.css'
-import searchMovies from '../../services/searchMovies';
-import Spinner from '../Spinner/Spinner';
 
-export default function MovieCardList({ params }) {
-  const { keyword } = params
-  const [movies, setMovies] = useState([])
-  const [loading, setLoading] = useState(false)
-
-  useEffect(() => {
-      setLoading(true)
-      searchMovies(keyword, 1)
-        .then((movies) => {
-          setMovies(movies)
-          setLoading(false)
-        })
-  }, [keyword]);
+export default function MovieCardList({ movies }) {
+  
 
   const movieCards = movies.map((movie) => {
     return(
@@ -32,16 +18,8 @@ export default function MovieCardList({ params }) {
   })
 
   return (
-    <>
-    {
-      loading
-      ? <Spinner />
-      :
-      <ul className='MovieCardList'>
+    <ul className='MovieCardList'>
       {movieCards}
-      </ul>
-    }
-    </>
-    
+    </ul>
   )
 }

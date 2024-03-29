@@ -30,6 +30,5 @@ export default async function searchMovies(keyword, page) {
     });
   }
 
-  console.log(searchResult)
   return searchResult.filter(movie => movie.poster_path !== null)
 }
