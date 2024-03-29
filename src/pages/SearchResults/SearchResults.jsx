@@ -10,7 +10,7 @@ export default function SearchResults({ params }) {
 
 	useEffect(() => {
 		setLoading(true)
-		getMovies({ keyword: keyword, page: 1, search: false }).then((movies) => {
+		getMovies({ keyword: keyword, page: 1, search: true }).then((movies) => {
 			setMovies(movies)
 			setLoading(false)
 		})

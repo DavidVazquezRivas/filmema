@@ -3,16 +3,16 @@ import { Link } from 'wouter'
 
 export default function Header() {
 	return (
-		<header>
-			<Link
-				to="/"
-				className="header-logo"
-			>
-				<img src="../../../logo.svg" />
-			</Link>
+		<header className='app-header'>
+			<div className='header-left'>
+				<Link to='/' className='header-logo'>
+					<img src='../../../logo.svg' />
+				</Link>
+				<Link to='/discover/movies'className='header-button'>DISCOVER</Link>
+			</div>
 			<div className="type-select">
-				<button>MOVIES</button>
-				<button>SERIES</button>
+				<button className='header-button'>MOVIES</button>
+				<button className='header-button'>SERIES</button>
 			</div>
 			<form className="searcher">
 				<input
