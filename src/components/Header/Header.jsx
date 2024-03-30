@@ -35,7 +35,7 @@ export default function Header() {
 	return (
 		<header className='app-header'>
 			<Link to={`/${type}/discover`} className='header-logo'>
-				<img src='../../../logo.svg' />
+				<img src='../../../logo.webp' />
 			</Link>
 			<div className="type-select">
 				<button className='header-button' onClick={setMovie}>MOVIES</button>
