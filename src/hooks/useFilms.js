@@ -11,7 +11,7 @@ export function useFilms ({ keyword = '', search, type = 'movie'}) {
 			setFilms(movies)
 			setLoading(false)
 		})
-	}, [keyword])
+	}, [keyword, type, search])
 
   return {loading, films}
 }

@@ -1,5 +1,10 @@
-import Discover from '../Discover/Discover'
+import { useEffect } from 'react'
+import { useLocation } from 'wouter'
 
 export default function Home() {
-	return <Discover></Discover>
+	
+	const [location, navigate] = useLocation()
+	useEffect(() => {
+		navigate('/movie/discover')
+	})
 }

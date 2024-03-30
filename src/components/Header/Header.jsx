@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import TypeContext from '../../context/typeContext'
 import './Header.css'
 import { Link, useLocation } from 'wouter'
 
 export default function Header() {
 	const [keyword, setKeyword] = useState('')
 	const [location, navigate] = useLocation()
+	const [type, setType] = useContext(TypeContext)
 
 	const handleChange = event => {
 		setKeyword(event.target.value)
@@ -12,18 +14,32 @@ export default function Header() {
 
 	const handleSubmit = event => {
 		event.preventDefault()
-
-		navigate(`/search/${keyword}`)
+		navigate(`/${type}/search/${keyword}`)
 	}
+
+	const setMovie = () => {
+		setType('movie')
+		updateLocation('/movie')
+	}
+
+	const setTv = () => {
+		setType('tv')
+		updateLocation('/tv')
+	}
+
+	const updateLocation = (newTypePath) => {
+    const newPath = location.replace(/\/(movie|tv)/, newTypePath);
+    navigate(newPath);
+  };
 
 	return (
 		<header className='app-header'>
-			<Link to='/' className='header-logo'>
+			<Link to={`/${type}/discover`} className='header-logo'>
 				<img src='../../../logo.svg' />
 			</Link>
 			<div className="type-select">
-				<button className='header-button'>MOVIES</button>
-				<button className='header-button'>SERIES</button>
+				<button className='header-button' onClick={setMovie}>MOVIES</button>
+				<button className='header-button' onClick={setTv}>SERIES</button>
 			</div>
 			<form className="searcher" onSubmit={handleSubmit}>
 				<input
