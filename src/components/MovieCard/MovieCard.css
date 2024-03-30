@@ -52,3 +52,7 @@
 .movie-card h3 {
 	padding: 4px 0;
 }
+
+.movie-card-data span {
+	color: rgb(165, 165, 165);
+}
