@@ -2,6 +2,7 @@ import './MovieCard.css'
 import { API_base_img } from '../../constants/APIconst'
 import GenreContext from '../../context/genresContext'
 import { useContext } from 'react'
+import { Link } from 'wouter'
 
 export default function MovieCard({
 	genreIds,
@@ -18,9 +19,9 @@ export default function MovieCard({
 	const poster = `${API_base_img}/${posterSize}/${posterPath}`
 
 	return (
-		<a
+		<Link
 			className='movie-card'
-			href='#'
+			to={`/details/${id}`}
 		>
 			<img src={poster} />
 			<section className='movie-card-data'>
@@ -28,6 +29,6 @@ export default function MovieCard({
 				<h3>{title}</h3>
 				<span>{genre}</span>
 			</section>
-		</a>
+		</Link>
 	)
 }
