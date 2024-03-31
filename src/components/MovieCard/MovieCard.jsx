@@ -1,6 +1,7 @@
 import './MovieCard.css'
 import { API_base_img } from '../../constants/APIconst'
 import GenreContext from '../../context/genresContext'
+import TypeContext from '../../context/typeContext'
 import { useContext } from 'react'
 import { Link } from 'wouter'
 
@@ -12,6 +13,8 @@ export default function MovieCard({
 	title,
 }) {
 
+	const [type, setType] = useContext(TypeContext)
+
 	const genreMap = useContext(GenreContext)
 	const genre = genreIds.map(id => genreMap[id]).join(' / ')
 
@@ -21,7 +24,7 @@ export default function MovieCard({
 	return (
 		<Link
 			className='movie-card'
-			to={`/details/${id}`}
+			to={`/${type}/details/${id}`}
 		>
 			<img src={poster} />
 			<section className='movie-card-data'>

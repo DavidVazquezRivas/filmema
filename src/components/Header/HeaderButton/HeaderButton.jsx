@@ -11,6 +11,7 @@ export default function HeaderButton({ active, children, number, setActive }) {
 	const [location, navigate] = useLocation()
 
 	const handleClick = () => {
+		if (location.includes('/details')) return
 		setActive(number)
 		if (type != types[number]) {
 			// prevent unnecesary navigate and state change (check on docs if useState(React) and useLocation(wouter) already does the comprobation)
