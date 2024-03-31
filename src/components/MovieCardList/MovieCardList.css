@@ -2,10 +2,14 @@
 	--min-moviecard-w: 220px;
 }
 
-.MovieCardList {
+.movie-card-list {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(var(--min-moviecard-w), 1fr));
 	grid-gap: 20px;
+}
+
+.movie-card-list .movie-card {
+	max-width: 500px;
 }
 
 @media (width > 1800px) {
