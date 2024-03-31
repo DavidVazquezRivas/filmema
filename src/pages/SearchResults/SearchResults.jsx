@@ -4,7 +4,7 @@ import { useFilms } from '../../hooks/useFilms'
 
 export default function SearchResults({ params }) {
 	const { keyword, type } = params
-	const {loading, films} = useFilms({keyword, search: true, type: type})
+	const { loading, films } = useFilms({keyword, search: true, type: type})
 
 	return <>
 		{loading 

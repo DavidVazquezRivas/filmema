@@ -1,4 +1,4 @@
-import { API_URL, API_KEY } from '../APIconst'
+import { API_URL, API_KEY } from '../constants/APIconst'
 
 export async function getGenresMap() {
   const types = ['movie', 'tv']

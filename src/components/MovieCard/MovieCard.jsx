@@ -1,5 +1,5 @@
 import './MovieCard.css'
-import { API_base_img } from '../../APIconst'
+import { API_base_img } from '../../constants/APIconst'
 import GenreContext from '../../context/genresContext'
 import { useContext } from 'react'
 
@@ -19,11 +19,11 @@ export default function MovieCard({
 
 	return (
 		<a
-			className="movie-card"
-			href="#"
+			className='movie-card'
+			href='#'
 		>
 			<img src={poster} />
-			<section className="movie-card-data">
+			<section className='movie-card-data'>
 				<p>{release}</p>
 				<h3>{title}</h3>
 				<span>{genre}</span>

@@ -1,0 +1,31 @@
+.searcher {
+	width: fit-content;
+	border-radius: 10px;
+	justify-self: right;
+	margin-right: 50px;
+
+	grid-column: 3;
+	display: flex;
+	flex-direction: row;
+	justify-content: right;
+	overflow: hidden;
+}
+
+.searcher input {
+	color: #000;
+	background-color: #fff;
+	opacity: 1;
+	border: 0;
+	padding: 0 10px;
+	font-size: 1.5rem;
+}
+
+.searcher button {
+	background-color: #fff;
+	opacity: 1;
+	width: 40px;
+	color: black;
+	border: 0;
+
+	cursor: pointer;
+}

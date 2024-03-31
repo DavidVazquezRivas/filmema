@@ -15,5 +15,5 @@ export default function MovieCardList({ movies }) {
 		)
 	})
 
-	return <ul className="MovieCardList">{movieCards}</ul>
+	return <ul className='MovieCardList'>{movieCards}</ul>
 }
