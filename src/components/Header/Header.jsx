@@ -2,7 +2,7 @@ import { useState, useContext } from 'react'
 import TypeContext from '../../context/typeContext'
 import './Header.css'
 import { Link } from 'wouter'
-import HeaderButton from './HeaderButton/HeaderButton'
+import TypeButton from './TypeButton/TypeButton'
 import Searcher from './Searcher/Searcher'
 
 export default function Header() {
@@ -15,12 +15,12 @@ export default function Header() {
 				<img src='../../../logo.webp' />
 			</Link>
 			<nav className='type-select'>
-				<HeaderButton active={active} number={0} setActive={setActive}>
+				<TypeButton active={active} number={0} setActive={setActive}>
 					MOVIES
-				</HeaderButton>
-				<HeaderButton active={active} number={1} setActive={setActive}>
+				</TypeButton>
+				<TypeButton active={active} number={1} setActive={setActive}>
 					SERIES
-				</HeaderButton>
+				</TypeButton>
 			</nav>
 			<Searcher />
 		</header>

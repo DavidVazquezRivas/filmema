@@ -1,11 +1,11 @@
-import './HeaderButton.css'
+import './TypeButton.css'
 import { useContext } from 'react'
 import { types } from '../../../constants/const'
 import TypeContext from '../../../context/typeContext'
 import { useLocation } from 'wouter'
 
-export default function HeaderButton({ active, children, number, setActive }) {
-	const buttonClass = 'header-button' + (active === number ? ' active' : '')
+export default function TypeButton({ active, children, number, setActive }) {
+	const buttonClass = 'type-button' + (active === number ? ' active' : '')
 
 	const [type, setType] = useContext(TypeContext)
 	const [location, navigate] = useLocation()
