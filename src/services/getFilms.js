@@ -1,4 +1,4 @@
-import fetchMovies from './fetchFilms'
+import fetchFilms from './fetchFilms'
 
 export default async function getMovies({
 	keyword = '',
@@ -16,12 +16,7 @@ export default async function getMovies({
 
 	let result
 	for (let i = APIpage; i < APIpage + pageSize; i++) {
-		result = await fetchMovies({
-			keyword: keyword,
-			mode: mode,
-			page: i,
-			type: type,
-		})
+		result = await fetchFilms({ keyword: keyword, mode: mode, page: i, type: type })
 		result.forEach((movie) =>
 			processData(movie, uniqueMovies, searchResult, type)
 		)

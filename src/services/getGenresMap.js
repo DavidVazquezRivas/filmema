@@ -1,16 +1,7 @@
-import { API_URL, API_KEY } from '../constants/APIconst'
+import { API_URL, options } from '../constants/APIconst'
 
 export async function getGenresMap() {
   const types = ['movie', 'tv']
-
-	const options = {
-		method: 'GET',
-		headers: {
-			accept: 'application/json',
-			Authorization:
-				`Bearer ${API_KEY}`,
-		},
-	}
 
   const map = {}
 
