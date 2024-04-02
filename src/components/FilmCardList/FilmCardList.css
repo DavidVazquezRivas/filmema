@@ -1,0 +1,19 @@
+:root {
+	--min-filmcard-w: 220px;
+}
+
+.film-card-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(var(--min-filmcard-w), 1fr));
+	grid-gap: 20px;
+}
+
+.film-card-list .film-card {
+	max-width: 500px;
+}
+
+@media (width > 1800px) {
+	:root {
+		--min-filmcard-w: 300px;
+	}
+}

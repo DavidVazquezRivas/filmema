@@ -1,11 +1,11 @@
-import './MovieCard.css'
+import './FilmCard.css'
 import { API_base_img } from '../../constants/APIconst'
 import GenreContext from '../../context/genresContext'
 import TypeContext from '../../context/typeContext'
 import { useContext } from 'react'
 import { Link } from 'wouter'
 
-export default function MovieCard({
+export default function FilmCard({
 	genreIds,
 	id,
 	posterPath,
@@ -23,11 +23,11 @@ export default function MovieCard({
 
 	return (
 		<Link
-			className='movie-card'
+			className='film-card'
 			to={`/${type}/details/${id}`}
 		>
 			<img src={poster} />
-			<section className='movie-card-data'>
+			<section className='film-card-data'>
 				<p>{release}</p>
 				<h3>{title}</h3>
 				<span>{genre}</span>

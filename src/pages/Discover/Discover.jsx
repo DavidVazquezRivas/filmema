@@ -1,4 +1,4 @@
-import MovieCardList from '../../components/MovieCardList/MovieCardList'
+import FilmCardList from '../../components/FilmCardList/FilmCardList'
 import Spinner from '../../components/Spinner/Spinner'
 import { useFilms } from '../../hooks/useFilms'
 
@@ -9,6 +9,6 @@ export default function Discover({ params }) {
 	return <>
 		{loading 
 			? <Spinner /> 
-			: <MovieCardList movies={films} />}
+			: <FilmCardList films={films} />}
 	</>
 }
