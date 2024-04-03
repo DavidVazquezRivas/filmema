@@ -6,8 +6,8 @@ import TypeButton from './TypeButton/TypeButton'
 import Searcher from './Searcher/Searcher'
 
 export default function Header() {
-	const [active, setActive] = useState(0)
 	const [type, setType] = useContext(TypeContext)
+	const [active, setActive] = useState(type === 'movie' ? 0 : 1)
 
 	return (
 		<header className='app-header'>
