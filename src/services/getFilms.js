@@ -15,8 +15,9 @@ export default async function getMovies({
 
 	let APIpage = (page - 1) * pageSize + 1
 
-	let result
-	for (let i = APIpage; i < APIpage + pageSize; i++) {
+	const pageLength = 20
+	let result = [...Array(pageLength)]
+	for (let i = APIpage; i < APIpage + pageSize && result.length === pageLength; i++) {
 		result = await fetchFilms({ keyword: keyword, mode: mode, page: i, type: type })
 		result.forEach((movie) =>
 			processCardData(movie, uniqueMovies, searchResult, type)
