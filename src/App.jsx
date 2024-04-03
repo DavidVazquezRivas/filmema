@@ -6,6 +6,7 @@ import SearchResults from './pages/SearchResults/SearchResults'
 import Discover from './pages/Discover/Discover'
 import { TypeContextProvider } from './context/typeContext'
 import { GenresContextProvider } from './context/genresContext'
+import Details from './pages/Details/Details'
 
 function App() {
 	return (
@@ -25,6 +26,10 @@ function App() {
 						<Route 
 							component={Discover}
 							path=':type/discover'
+						/>
+						<Route 
+							component={Details}
+							path=':type/details/:id'
 						/>
 					</main>
 				</GenresContextProvider>

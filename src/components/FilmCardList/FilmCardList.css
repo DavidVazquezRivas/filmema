@@ -3,6 +3,7 @@
 }
 
 .film-card-list {
+	padding: 10px;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(var(--min-filmcard-w), 1fr));
 	grid-gap: 20px;
