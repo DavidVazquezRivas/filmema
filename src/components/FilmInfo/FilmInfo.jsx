@@ -30,7 +30,7 @@ export default function FilmInfo({ film }) {
           <img src={banner} alt="Film's banner (backdrop)"/>
         </div>
         <aside className='score'>
-          Score: <b>{film.voteAverage.toFixed(1)}</b> /10
+          Score: <b>{film.voteAverage ? film.voteAverage.toFixed(1) : ''}</b> /10
         </aside>
         <div className='filminfo-header-data'>
           <img src={poster} alt="Film's poster"/>
