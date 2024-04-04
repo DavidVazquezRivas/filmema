@@ -42,9 +42,10 @@ export default function FilmInfo({ film }) {
             <time dateTime={film.releaseDate}>
               {formatDate(film.releaseDate)}
             </time>
+            <p>Status: {film.status}</p>
           </div>
         </div>
-        <p>
+        <p className='overview'>
           {film.overview}
         </p>
       </header>
