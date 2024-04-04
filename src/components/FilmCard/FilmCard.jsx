@@ -16,7 +16,7 @@ export default function FilmCard({
 	const [type, setType] = useContext(TypeContext)
 
 	const genreMap = useContext(GenreContext)
-	const genre = genreIds.map(id => genreMap[id]).join(' / ')
+	const genre = genreIds && genreIds.map(id => genreMap[id]).join(' / ')
 
 	const posterSize = 'w500'
 	const poster = `${API_base_img}/${posterSize}/${posterPath}`
