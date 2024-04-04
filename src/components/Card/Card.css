@@ -1,11 +1,11 @@
 :root {
-  --card-height: 60px
+  --card-height: 60px;
+  --card-width: 250px;
 }
 
 .card {
-  margin: 10px;
   height: var(--card-height);
-  width: 250px;
+  width: var(--card-width);
   border-radius: 5px;
   overflow: hidden;
   position: relative;
@@ -35,10 +35,12 @@
 .card h4 {
   font-weight: 600;
   font-size: 1.1rem;
+  white-space: nowrap;
 }
 
 .card h5 {
   font-weight: normal;
   color: rgb(200, 200, 200);
   font-size: 0.9rem;
+  white-space: nowrap;
 }

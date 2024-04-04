@@ -2,7 +2,7 @@
   width: 50%;
 }
 
-@media (width < 1400px) {
+@media (width < 1300px) {
 	.filminfo {
 		width: 100%
 	}
@@ -109,6 +109,7 @@
   display: flex;
   align-items: end;
   gap: 5px;
+  flex-wrap: wrap;
 }
 
 .filminfo-header-data div time {
@@ -118,6 +119,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  white-space: nowrap;
 }
 
 .filminfo-header-data p {
@@ -135,4 +137,25 @@
 
   margin: 10px;
   text-wrap: pretty;
+}
+
+/* gray boxes */
+
+.extra-info article {
+  background: rgba(100, 100, 100, 0.3);
+  border-radius: 0 10px 10px 0;
+  overflow: hidden;
+
+  padding: 15px;
+}
+
+.extra-info article h3 {
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.extra-info article ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
 }
