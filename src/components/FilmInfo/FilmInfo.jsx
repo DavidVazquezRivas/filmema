@@ -60,6 +60,16 @@ export default function FilmInfo({ film }) {
           <h3>Cast</h3>
           <CollapsableList collapsedRows={3} elements={cast} rowHeight={60}/>
         </article>
+        <article>
+          <div>
+            <i className="fa fa-solid fa-film"></i>
+            <span>Country: {film.productionCountries}</span>
+          </div>
+          <div>
+            <i className="fa fa-regular fa-clock"></i>
+            <span>Runtime: {film.runtime}</span>
+          </div>
+        </article>
       </main>
     </section>
   )
