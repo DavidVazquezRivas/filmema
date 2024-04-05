@@ -147,6 +147,7 @@
   overflow: hidden;
 
   padding: 15px;
+  margin: 20px 0;
 }
 
 .extra-info article h3 {
@@ -158,4 +159,8 @@
 .extra-info article ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
+}
+
+.extra-info span {
+  margin-left: 5px;
 }
