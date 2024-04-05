@@ -1,7 +1,7 @@
 import './Card.css'
 import { Link } from 'wouter'
 
-export default function Card({ href, image, title, subtitle }) {
+export default function Card({ href = '#', image, subtitle = '', title = '' }) {
   return (
   <Link to={href} className='card'>
     <img src={image} />

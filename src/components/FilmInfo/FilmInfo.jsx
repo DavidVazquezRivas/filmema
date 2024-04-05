@@ -1,6 +1,8 @@
 import './FilmInfo.css'
-import { API_base_img } from "../../constants/APIconst"
-import GenreTag from "../GenreTag/GenreTag"
+import { API_base_img } from '../../constants/APIconst'
+import GenreTag from '../GenreTag/GenreTag'
+import Card from '../Card/Card'
+import CollapsableList from '../CollapsableList/CollapsableList'
 
 export default function FilmInfo({ film }) {
 
@@ -14,14 +16,18 @@ export default function FilmInfo({ film }) {
     return <GenreTag key={genre.id} id={genre.id} name={genre.name}/>
   })
 
-  const formatDate = (date) => {
-    if (!date) return undefined
-
-    const months = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'Jun.', 'Jul.', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'];
-    const [year, month, day] = date.split('-');
-    const formattedMonth = months[parseInt(month) - 1];
-    return `${formattedMonth} ${parseInt(day)}, ${year}`;
-  }
+  const profileSize = 'w185'
+  const cast = film.cast && film.cast.map((actor) => {
+    return (
+      <Card 
+        href='#'
+        image={`${API_base_img}/${profileSize}/${actor.profile_path}`}
+        key={actor.id}
+        subtitle={actor.character}
+        title={actor.name}
+      />
+    )
+  })
 
   return(
     <section className='filminfo'>
@@ -49,6 +55,21 @@ export default function FilmInfo({ film }) {
           {film.overview}
         </p>
       </header>
+      <main className='extra-info'>
+        <article>
+          <h3>Cast</h3>
+          <CollapsableList collapsedRows={3} elements={cast} rowHeight={60}/>
+        </article>
+      </main>
     </section>
   )
+}
+
+function formatDate (date) {
+  if (!date) return undefined
+
+  const months = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'Jun.', 'Jul.', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'];
+  const [year, month, day] = date.split('-');
+  const formattedMonth = months[parseInt(month) - 1];
+  return `${formattedMonth} ${parseInt(day)}, ${year}`;
 }
