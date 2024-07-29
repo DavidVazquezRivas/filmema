@@ -1,10 +1,17 @@
 import './FilmInfo.css'
 import { API_base_img } from '../../constants/APIconst'
+import TypeContext from '../../context/typeContext'
+import { useContext } from 'react'
+import { Link } from 'wouter'
 import GenreTag from '../GenreTag/GenreTag'
 import Card from '../Card/Card'
 import CollapsableList from '../CollapsableList/CollapsableList'
+import { Slide } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css';
 
 export default function FilmInfo({ film }) {
+
+  const [type, setType] = useContext(TypeContext)
 
   const bannerSize = 'w1280'
   const banner = `${API_base_img}/${bannerSize}/${film.backdropPath}`
@@ -16,6 +23,7 @@ export default function FilmInfo({ film }) {
     return <GenreTag key={genre.id} id={genre.id} name={genre.name}/>
   })
 
+  // Cast 
   const profileSize = 'w185'
   const cast = film.cast && film.cast.map((actor) => {
     return (
@@ -28,6 +36,52 @@ export default function FilmInfo({ film }) {
       />
     )
   })
+
+  const relatedSize = 'w185';
+
+  // Related films
+  const related = film.related && film.related.map((relatedFilm) => {
+    return (
+      <li>
+        <Link 
+          to={`/${type}/details/${relatedFilm.id}`}
+        >
+          <img src={`${API_base_img}/${relatedSize}/${relatedFilm.poster_path}`}/>
+        </Link>
+      </li>
+    )
+  })
+
+  const responsiveSlideSettings = [
+    {
+      breakpoint: 1000,
+      settings: {
+          slidesToShow: 5,
+          slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 750,
+      settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1
+      }
+    },
+    {
+        breakpoint: 550,
+        settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1
+        }
+    },
+    {
+        breakpoint: 300,
+        settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1
+        }
+    }
+];
 
   return(
     <section className='filminfo'>
@@ -69,6 +123,12 @@ export default function FilmInfo({ film }) {
             <i className="fa fa-regular fa-clock"></i>
             <span>Runtime: {film.runtime}</span>
           </div>
+        </article>
+        <article>
+          <h3>Related</h3>
+          <Slide slidesToScroll={1} slidesToShow={5} indicators={true} responsive={responsiveSlideSettings}>
+            {related}
+          </Slide>
         </article>
       </main>
     </section>
