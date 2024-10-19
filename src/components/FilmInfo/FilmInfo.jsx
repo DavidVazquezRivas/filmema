@@ -42,7 +42,7 @@ export default function FilmInfo({ film }) {
   // Related films
   const related = film.related && film.related.map((relatedFilm) => {
     return (
-      <li>
+      <li key={relatedFilm.id}>
         <Link 
           to={`/${type}/details/${relatedFilm.id}`}
         >

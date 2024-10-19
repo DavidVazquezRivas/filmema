@@ -51,6 +51,7 @@ async function getBasicDetails (id, type) {
   const response = await res.json();
 
   return {
+    id: id,
     backdropPath: response[map.backdropPath],
     genres: response[map.genres], 
     originalLanguage: response[map.originalLanguage], 
