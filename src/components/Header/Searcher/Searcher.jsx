@@ -15,7 +15,7 @@ export default function Searcher() {
 
 	const handleSubmit = event => {
 		event.preventDefault()
-		navigate(`/${type}/search/${keyword}`)
+		if (keyword !== '') navigate(`/${type}/search/${keyword}`)
 	}
 
 	const toggleInput = () => {
