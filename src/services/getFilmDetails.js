@@ -58,7 +58,7 @@ async function getBasicDetails (id, type) {
     overview: response[map.overview], 
     posterPath: response[map.posterPath], 
     productionCompanies: response[map.productionCompanies], 
-    productionCountries: response[map.productionCountries][0] ? response[map.productionCountries][0].iso_3166_1 : undefined, 
+    productionCountries: response[map.productionCountries][0] ? response[map.productionCountries][0].iso_3166_1 : 'unknown', 
     releaseDate: response[map.releaseDate], 
     runtime: type !== 'tv' ? response[map.runtime] : response[map.runtime][0] ? response[map.runtime][0] : 45, 
     seasons: response.seasons ? response.seasons.map(season => ({name: season.name,season_number: season.season_number})) : null,
