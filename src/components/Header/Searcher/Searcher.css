@@ -1,6 +1,5 @@
 .searcher {
 	width: fit-content;
-	border-radius: 10px;
 	justify-self: right;
 	margin-right: 50px;
 
@@ -18,14 +17,55 @@
 	border: 0;
 	padding: 0 10px;
 	font-size: 1.5rem;
+	border-radius: 10px;
 }
 
 .searcher button {
-	background-color: #fff;
+	background-color: transparent;
 	opacity: 1;
-	width: 40px;
-	color: black;
+	color: white;
 	border: 0;
-
 	cursor: pointer;
+	padding: 10px;
+}
+
+.searcher button i {
+	color: white;
+}
+
+@media (max-width: 1100px) {
+	.searcher {
+		margin-right: 10px;
+	}
+
+	.searcher input {
+		width: 60vw;
+		opacity: 0;
+		transition: all 0.3s ease;
+	}
+	
+	.searcher input.visible {
+		opacity: 1;
+	}
+
+	.searcher button[type='submit'] {
+		opacity: 0;
+		transition: all 0.3s ease;
+	}
+	
+	.searcher button[type='submit'].visible {
+		opacity: 1;
+	}
+
+	.searcher button[type='button'] {
+		opacity: 1;
+	}
+}
+
+@media (min-width: 1101px) {
+	.searcher button[type='button'] {
+		opacity: 0;
+		width: 0;
+		cursor:default;
+	}
 }

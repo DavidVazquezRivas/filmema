@@ -5,29 +5,46 @@ import TypeContext from '../../../context/typeContext'
 
 export default function Searcher() {
 	const [keyword, setKeyword] = useState('')
-  const [location, navigate] = useLocation()
-  const [type, setType] = useContext(TypeContext)
+	const [isInputVisible, setIsInputVisible] = useState(false)
+	const [location, navigate] = useLocation()
+	const [type, setType] = useContext(TypeContext)
 
-  const handleChange = event => {
+	const handleChange = event => {
 		setKeyword(event.target.value)
 	}
 
-  const handleSubmit = event => {
+	const handleSubmit = event => {
 		event.preventDefault()
 		navigate(`/${type}/search/${keyword}`)
 	}
 
+	const toggleInput = () => {
+		setIsInputVisible(prev => !prev)
+	}
+
+	const input = (
+		<input
+			type='text'
+			placeholder='Type title to search'
+			value={keyword}
+			onChange={handleChange}
+			className={isInputVisible ? 'visible' : ''}
+		/>
+	)
+
+	const searchButton = (
+		<button type='submit' className={isInputVisible ? 'visible' : ''}>
+			<i className='fa fa-search'></i>
+		</button>
+	)
+
 	return (
 		<form className='searcher' onSubmit={handleSubmit}>
-			<input
-				type='text'
-				placeholder='Type title to search'
-				value={keyword}
-				onChange={handleChange}
-			></input>
-			<button type='submit'>
-				<i className='fa fa-search'></i>
+			{input}
+			<button type='button' onClick={toggleInput}>
+				<i className={`fa ${isInputVisible ? 'fa-times' : 'fa-search'}`}></i>
 			</button>
+			{searchButton}
 		</form>
 	)
 }
